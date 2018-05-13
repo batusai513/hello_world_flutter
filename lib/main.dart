@@ -31,13 +31,28 @@ class HelloRectangle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        height: 400.0,
-        width: 300.0,
-        color: Colors.green,
-        child: Center(
-          child: Text(
-            'Hello',
-            style: TextStyle(fontSize: 40.0),
+        child: Padding(
+          padding: EdgeInsets.all(15.0),
+          child: InkWell(
+            child: Row(
+              children: <Widget>[
+                Padding(
+                  padding: EdgeInsets.all(5.0),
+                  child: Icon(Icons.cake),
+                ),
+                Center(
+                  child: Text(
+                    'Hola',
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.display1.copyWith(
+                          color: Colors.grey[700],
+                          fontSize: 24.0,
+                          fontWeight: FontWeight.w700,
+                        ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
