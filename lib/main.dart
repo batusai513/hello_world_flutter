@@ -23,6 +23,10 @@ import 'package:hello_world/category_route.dart';
 
 //Top level functions: functions outside classes
 
+/*
+You might wonder why StatefulWidget and State are separate objects. In Flutter, these two types of objects have different life cycles. Widgets are temporary objects, used to construct a presentation of the application in its current state. State objects on the other hand are persistent between calls to build(), allowing them to remember information.
+*/
+
 const _categoryName = 'Cake';
 const _categoryIcon = Icons.cake;
 const _categoryColor = Colors.green;
