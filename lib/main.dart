@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_world/category.dart';
 
 // Flutter Reactive Framework: immutable list of widgets
 // Widgets: Foundation of flutter apps, it's a description of part of a user interface
@@ -21,44 +22,10 @@ import 'package:flutter/material.dart';
 //Scaffold:  drawers, appbars, bottomNavigation, floating action buttons
 
 //Top level functions: functions outside classes
-Widget helloRectangle2() {
-  return Container(color: Colors.green);
-}
 
-// codetip: always use trailing commas to format the code well
-class HelloRectangle extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        child: Padding(
-          padding: EdgeInsets.all(15.0),
-          child: InkWell(
-            child: Row(
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.all(5.0),
-                  child: Icon(Icons.cake),
-                ),
-                Center(
-                  child: Text(
-                    'Hola',
-                    textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.display1.copyWith(
-                          color: Colors.grey[700],
-                          fontSize: 24.0,
-                          fontWeight: FontWeight.w700,
-                        ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
+const _categoryName = 'Cake';
+const _categoryIcon = Icons.cake;
+const _categoryColor = Colors.green;
 
 void main() => runApp(
       MaterialApp(
@@ -67,7 +34,11 @@ void main() => runApp(
           appBar: AppBar(
             title: Text('Hello World!!!!'),
           ),
-          body: HelloRectangle(),
+          body: Category(
+            name: _categoryName,
+            color: _categoryColor,
+            iconLocation: _categoryIcon,
+          ),
         ),
       ),
     );
