@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hello_world/category.dart';
+import 'package:hello_world/category_route.dart';
 
 // Flutter Reactive Framework: immutable list of widgets
 // Widgets: Foundation of flutter apps, it's a description of part of a user interface
@@ -30,15 +30,7 @@ const _categoryColor = Colors.green;
 void main() => runApp(
       MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: Scaffold(
-          appBar: AppBar(
-            title: Text('Hello World!!!!'),
-          ),
-          body: Category(
-            name: _categoryName,
-            color: _categoryColor,
-            iconLocation: _categoryIcon,
-          ),
-        ),
+        title: 'unit converter',
+        home: CategoryRoute()
       ),
     );
