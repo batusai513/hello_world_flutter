@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 
 final _rowHeight = 100.0;
-final _borderRadius = BorderRadius.circular(_rowHeight / 2);
+final _borderRadius = BorderRadius.circular(_rowHeight / 4);
 
 class Category extends StatelessWidget {
   final String name;
@@ -45,11 +45,13 @@ class Category extends StatelessWidget {
                     size: 60.0,
                   ),
                 ),
-                Center(child: Text(
-                  name,
-                  textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.headline,
-                ),)
+                Center(
+                  child: Text(
+                    name,
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.headline,
+                  ),
+                )
               ],
             ),
           ),
