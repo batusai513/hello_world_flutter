@@ -20,27 +20,34 @@ class HelloWorld extends StatelessWidget {
   }
 }
 
-
 class TodoApp extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-      // TODO: implement createState
-      return _TodoApp();
-    }
+    // TODO: implement createState
+    return _TodoApp();
+  }
 }
 
 class _TodoApp extends State<TodoApp> {
   final TextEditingController _textController = TextEditingController();
 
   _buildComposer() {
-    return new Container(
+    return Container(
       margin: EdgeInsets.symmetric(horizontal: 8.0),
-      child: TextField(
-        controller: _textController,
-        onSubmitted: _handleSubmitted,
-        decoration: InputDecoration.collapsed(
-          hintText: 'New Todo'
-        ),
+      child: Row(
+        children: <Widget>[
+          Flexible(
+            child: TextField(
+              controller: _textController,
+              onSubmitted: _handleSubmitted,
+              decoration: InputDecoration.collapsed(hintText: 'New Todo'),
+            ),
+          ),
+          IconButton(
+            icon: Icon(Icons.send),
+            onPressed: () => _handleSubmitted(_textController.text),
+          )
+        ],
       ),
     );
   }
@@ -54,7 +61,6 @@ class _TodoApp extends State<TodoApp> {
     return _buildComposer();
   }
 }
-
 
 // MaterialApp
 //  title:
